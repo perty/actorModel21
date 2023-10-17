@@ -1,4 +1,13 @@
-# Actor model with Chat example
+# Actor Model in Java
+
+## The Klang minimalist gist
+
+In folder `src/main/java/se/artcomputer/edu/actor` there is a gist from 
+[Viktor Klang](https://gist.github.com/viktorklang), a member of Akka project. I have removed some lint.
+
+It is a minimalist Actor implementation. It is for reference only.
+
+## Actor model with Chat example
 
 Adapted from the blogs [ACTORS AND VIRTUAL THREADS, A MATCH MADE IN HEAVEN?](https://www.javaadvent.com/2022/12/actors-and-virtual-threads-a-match-made-in-heaven.html)
 and [Type You An Actor Runtime For Greater Good!](https://evacchi.github.io/posts/2022/02/13/type-you-an-actor-runtime-for-greater-good-with-java-17-records-switch-expressions-and-jbang/)

@@ -7,6 +7,12 @@ In folder `src/main/java/se/artcomputer/edu/actor` there is a gist from
 
 It is a minimalist Actor implementation. It is for reference only.
 
+## Evacchi
+
+From this [blog post](https://evacchi.github.io/posts/2021/10/12/learn-you-an-actor-system-for-great-good-with-java-17-records-switch-expressions-and-jbang/)
+by [Edoardo Vacchi](https://gist.github.com/evacchi).
+
+
 ## Actor model with Chat example
 
 Adapted from the blogs [ACTORS AND VIRTUAL THREADS, A MATCH MADE IN HEAVEN?](https://www.javaadvent.com/2022/12/actors-and-virtual-threads-a-match-made-in-heaven.html)

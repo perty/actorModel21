@@ -32,7 +32,7 @@ public class Actor implements Runnable {
         if (message.equals(SHUTDOWN)) {
             throw new InterruptedException("SHUTDOWN");
         }
-        Thread.sleep(500);
+        Thread.sleep(10_000);
         log("Done processing message '%s'".formatted(message.payload()));
     }
 

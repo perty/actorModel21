@@ -6,6 +6,11 @@ import java.util.concurrent.LinkedBlockingQueue;
 public class Actor implements Runnable {
     public static final Message SHUTDOWN = new Message("__SHUTDOWN__");
     private final BlockingQueue<Message> mailBox;
+
+    public int getNumber() {
+        return number;
+    }
+
     private final int number;
 
     public Actor(int number) {
@@ -32,12 +37,12 @@ public class Actor implements Runnable {
         if (message.equals(SHUTDOWN)) {
             throw new InterruptedException("SHUTDOWN");
         }
-        Thread.sleep(10_000);
+        Thread.sleep(1_000);
         log("Done processing message '%s'".formatted(message.payload()));
     }
 
     private void log(String logEntry) {
-        System.out.printf("%d: %s%n", number, logEntry);
+        System.out.printf("%d %d: %s%n", System.currentTimeMillis(), number, logEntry);
     }
 
     public void message(Message message) {

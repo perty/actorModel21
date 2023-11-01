@@ -16,15 +16,18 @@ public class Main {
         System.out.printf("Starting %d actors.%n", numberOfActors);
         ExecutorService executorService = Executors.newVirtualThreadPerTaskExecutor();
         List<Future<?>> actorFutures = new ArrayList<>();
+        List<Actor> actors = new ArrayList<>();
         try {
             for (int n = 0; n < numberOfActors; n++) {
                 Actor actor = new Actor(n);
+                actors.add(actor);
                 actorFutures.add(executorService.submit(actor));
-                actor.message(new Actor.Message("Message for actor %d".formatted(n)));
-                actor.message(Actor.SHUTDOWN);
-                Thread.sleep(1000);
             }
-            System.out.println("Done starting actors");
+            System.out.println("Done starting actors. Sending messages.");
+            for (Actor actor: actors) {
+                actor.message(new Actor.Message("Message for actor %d".formatted(actor.getNumber())));
+                actor.message(Actor.SHUTDOWN);
+            }
             for (long done = 0; done < numberOfActors; done = numberOfDoneActors(actorFutures)) {
                 System.out.printf(">>>>>>>> %d actors are done <<<<<<<<<<%n", done);
                 Thread.sleep(1_000);
